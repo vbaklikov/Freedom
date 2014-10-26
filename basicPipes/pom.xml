@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.dnb.freedom</groupId>
+        <artifactId>freedompipes</artifactId>
+        <version>0</version>
+    </parent>
+
+    <artifactId>basicPipes</artifactId>
+    <name>basicPipes</name>
+
+
+    <dependencies>
+
+        <!-- HBase with SpyGlass -->
+        <dependency>
+            <groupId>parallelai</groupId>
+            <artifactId>parallelai.spyglass</artifactId>
+            <!-- Scala 2.10 | Scalding 0.10 | SpyGlass 4.3 -->
+            <version>2.10_0.10_4.3</version>
+        </dependency>
+
+        <!-- Scalding -->
+        <dependency>
+            <groupId>com.twitter</groupId>
+            <artifactId>scalding-jdbc_${scala.scalding.version}</artifactId>
+            <version>${scalding.version}</version>
+        </dependency>
+
+        <!-- Joda for time conversions -->
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>2.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.joda</groupId>
+            <artifactId>joda-convert</artifactId>
+            <version>1.5</version>
+        </dependency>
+
+        <!-- Hadoop libs -->
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-core</artifactId>
+            <version>2.0.0-mr1-cdh4.6.0</version> <!-- 0.20.2-->
+        </dependency>
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-common</artifactId>
+            <version>2.0.0-cdh4.6.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.hadoop.gplcompression</groupId>
+            <artifactId>hadoop-lzo</artifactId>
+            <version>${hadoop-lzo.version}</version>
+        </dependency>
+
+        <!-- Logging -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.esotericsoftware.kryo</groupId>
+            <artifactId>kryo</artifactId>
+            <version>2.21</version>
+        </dependency>
+
+        <!-- Driven Cascading plugin -->
+        <dependency>
+            <groupId>driven</groupId>
+            <artifactId>driven-plugin</artifactId>
+            <version>1.0.4-eap-76</version>
+            <classifier>io</classifier>
+        </dependency>
+
+        <!--
+            Import ScaldingUnit if you are using a version of Scalding older than 0.9 since the BddDsl
+            package was included just in 0.9
+
+        <dependency>
+            <groupId>com.pragmasoft</groupId>
+            <artifactId>scalding-unit</artifactId>
+            <version>0.5</version>
+        </dependency>
+        -->
+
+    </dependencies>
+
+    <version>1.0-SNAPSHOT</version>
+
+</project>

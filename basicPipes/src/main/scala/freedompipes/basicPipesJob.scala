@@ -18,20 +18,20 @@ class basicPipesJob(args: Args) extends Job(args){
 //      }
 //  //    .write(Csv(args("output"),separator=",",fields=SCHEMA_118DR_WITHKEY))
 
-    val sourceDUNSREF = Csv(args("input2"),",",fields = SCHEMA_DUNSREF, skipHeader = true)
-      .read
-      .project('Duns,'Company,'Postcode)
-      .sourceDunsRefCreateHashKey
-      .addTrap(Csv("data/error/errorDUNSRef.txt"))
-
-    val sourceCH = Csv(args("input3"),",",fields = SCHEMA_CH, skipHeader = true)
-      .read
-      .sourceCHCreateHashKey
-      .addTrap(Csv("data/error/errorCH.txt"))
-
-    val combinedRosetta = sourceDUNSREF
-      .dunsRefJoinWithCH(sourceCH)
-      .write(Csv("data/rosetta.txt"," | ",writeHeader=true))
+//    val sourceDUNSREF = Csv(args("input2"),",",fields = SCHEMA_DUNSREF, skipHeader = true)
+//      .read
+//      .project('Duns,'Company,'Postcode)
+//      .sourceDunsRefCreateHashKey
+//      .addTrap(Csv("data/error/errorDUNSRef.txt"))
+//
+//    val sourceCH = Csv(args("input3"),",",fields = SCHEMA_CH, skipHeader = true)
+//      .read
+//      .sourceCHCreateHashKey
+//      .addTrap(Csv("data/error/errorCH.txt"))
+//
+//    val combinedRosetta = sourceDUNSREF
+//      .dunsRefJoinWithCH(sourceCH)
+//      .write(Csv("data/rosetta.txt"," | ",writeHeader=true))
 
     val sourceRM = Csv(args("input4"),",",fields = SCHEMA_RM, skipHeader = true)
       .read

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.twitter:scalding-repl_2.10:0.12.0rc5">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/twitter/scalding-repl_2.10/0.12.0rc5/scalding-repl_2.10-0.12.0rc5.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/twitter/scalding-repl_2.10/0.12.0rc5/scalding-repl_2.10-0.12.0rc5-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/twitter/scalding-repl_2.10/0.12.0rc5/scalding-repl_2.10-0.12.0rc5-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

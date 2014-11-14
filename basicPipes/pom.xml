@@ -19,16 +19,15 @@
             <groupId>parallelai</groupId>
             <artifactId>parallelai.spyglass</artifactId>
             <!-- Scala 2.10 | Scalding 0.10 | SpyGlass 4.3 -->
-            <version>2.10_0.10_4.3</version>
+            <version>2.10_0.10_CDH5_4.4</version>
         </dependency>
 
         <!-- Scalding -->
         <dependency>
             <groupId>com.twitter</groupId>
-            <artifactId>scalding-jdbc_${scala.scalding.version}</artifactId>
-            <version>${scalding.version}</version>
+            <artifactId>scalding-repl_2.10</artifactId>
+            <version>0.12.0rc5</version>
         </dependency>
-
         <!-- Joda for time conversions -->
         <dependency>
             <groupId>joda-time</groupId>
@@ -42,16 +41,19 @@
         </dependency>
 
         <!-- Hadoop libs -->
+
         <dependency>
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-core</artifactId>
-            <version>2.0.0-mr1-cdh4.6.0</version> <!-- 0.20.2-->
+            <version>2.3.0-mr1-cdh5.1.0</version>
+            <type>pom</type>
         </dependency>
         <dependency>
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-common</artifactId>
-            <version>2.0.0-cdh4.6.0</version>
+            <version>2.3.0-cdh5.1.0</version>
         </dependency>
+
         <dependency>
             <groupId>com.hadoop.gplcompression</groupId>
             <artifactId>hadoop-lzo</artifactId>
@@ -75,13 +77,13 @@
             <version>2.21</version>
         </dependency>
 
-        <!-- Driven Cascading plugin -->
-        <dependency>
-            <groupId>driven</groupId>
-            <artifactId>driven-plugin</artifactId>
-            <version>1.1-eap-9</version>
-            <classifier>io</classifier>
-        </dependency>
+        <!--&lt;!&ndash; Driven Cascading plugin &ndash;&gt;-->
+        <!--<dependency>-->
+            <!--<groupId>driven</groupId>-->
+            <!--<artifactId>driven-plugin</artifactId>-->
+            <!--<version>1.1-eap-9</version>-->
+            <!--<classifier>io</classifier>-->
+        <!--</dependency>-->
 
         <!--
             Import ScaldingUnit if you are using a version of Scalding older than 0.9 since the BddDsl

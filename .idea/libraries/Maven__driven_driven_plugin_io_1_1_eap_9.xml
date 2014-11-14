@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: driven:driven-plugin:io:1.1-eap-9">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/driven/driven-plugin/1.1-eap-9/driven-plugin-1.1-eap-9-io.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/driven/driven-plugin/1.1-eap-9/driven-plugin-1.1-eap-9-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/driven/driven-plugin/1.1-eap-9/driven-plugin-1.1-eap-9-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

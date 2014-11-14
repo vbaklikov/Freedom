@@ -31,9 +31,17 @@ trait basicPipesOperations {
 
   def source118DRCreateHashKeyAndTimestamp : Pipe = {
     pipe
-      .map(('name, 'postalcode) -> ('hashkey, 'hashkeyAndDate)){
+      .map(('Company, 'Postcode) -> ('hashkey, 'hashkeyAndDate)){
       pair:(String, String) => (pair._2.concat(":").concat(pair._1).replaceAll("""\s+""","").toUpperCase,
         pair._2.concat(":").concat(pair._1).replaceAll("""\s+""","").toUpperCase.concat(":").concat("20141029"))
+    }
+  }
+
+  def sourceTradeBGCreateHashKeyAndTimestamp : Pipe = {
+    pipe
+      .map(('ACCNM, 'ADDR4,'LASTDOE) -> ('hashkey, 'hashkeyAndDate)){
+      truple:(String, String, String) => (truple._2.concat(":").concat(truple._1).replaceAll("""\s+""","").toUpperCase,
+        truple._2.concat(":").concat(truple._1).replaceAll("""\s+""","").toUpperCase.concat(":").concat(truple._3.replaceAll("-","")))
     }
   }
 

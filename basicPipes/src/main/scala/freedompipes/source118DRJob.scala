@@ -17,19 +17,20 @@ class source118DRJob(args: Args) extends Job(args) with HBasePipeConversions{
   val hbaseHost = args("hbaseServer")
 
 
-  val source118DR = Csv(args("inputFile"),",",SCHEMA_118DR, skipHeader = true)
+  val source118DR = Csv(args("inputFile"),",",SCHEMA_118DR_ORIG, skipHeader = true)
     .read
     .source118DRCreateHashKeyAndTimestamp
+    .addTrap(Csv("data/error/118DR/118DRBadRecords"))
 
   val rosettaInsert =  source118DR
-    .toBytesWritable('hashkey :: SCHEMA_118DR)
+    .toBytesWritable('hashkey :: SCHEMA_118DR_ORIG)
     .debug
     .write(new HBaseSource(
     tableName,
     hbaseHost,
     'hashkey,
-    SCHEMA_118DR.map((x: Symbol) => "dr"),
-    SCHEMA_118DR.map((x: Symbol) => new Fields(x.name)),
+    SCHEMA_118DR_ORIG.map((x: Symbol) => "118dr"),
+    SCHEMA_118DR_ORIG.map((x: Symbol) => new Fields(x.name)),
     useSalt = false))
 
   val source118DRforSignals = source118DR
@@ -41,11 +42,8 @@ class source118DRJob(args: Args) extends Job(args) with HBasePipeConversions{
     "signals_db",
     hbaseHost,
     'hashkeyAndDate,
-    List("signals"),
+    List("data"),
     List(new Fields("src118")),
     useSalt = false))
-
-
-
 
 }
